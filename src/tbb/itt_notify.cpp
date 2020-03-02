@@ -31,11 +31,18 @@
 extern "C" void ITT_DoOneTimeInitialization();
 #define __itt_init_ittlib_name(x,y) (ITT_DoOneTimeInitialization(), true)
 
+extern "C" void MallocInitializeITT();
 #elif __TBBMALLOC_BUILD
 
 extern "C" void MallocInitializeITT();
 #define __itt_init_ittlib_name(x,y) (MallocInitializeITT(), true)
 
+extern "C" void ITT_DoOneTimeInitialization();
+
+#elif __IRML_BUILD
+
+extern "C" void RmlInitializeITT();
+#define __itt_init_ittlib_name(x,y) (RmlInitializeITT(), true)
 #else
 #error This file is expected to be used for either TBB or TBB allocator build.
 #endif // __TBB_BUILD
@@ -70,24 +77,24 @@ namespace tbb {
 
 #if DO_ITT_NOTIFY
     const tchar
-            *SyncType_GlobalLock = _T("TbbGlobalLock"),
-            *SyncType_Scheduler = _T("%Constant")
+            *SyncType_GlobalLock = __TBB_T("TbbGlobalLock"),
+            *SyncType_Scheduler = __TBB_T("%Constant")
             ;
     const tchar
-            *SyncObj_SchedulerInitialization = _T("TbbSchedulerInitialization"),
-            *SyncObj_SchedulersList = _T("TbbSchedulersList"),
-            *SyncObj_WorkerLifeCycleMgmt = _T("TBB Scheduler"),
-            *SyncObj_TaskStealingLoop = _T("TBB Scheduler"),
-            *SyncObj_WorkerTaskPool = _T("TBB Scheduler"),
-            *SyncObj_MasterTaskPool = _T("TBB Scheduler"),
-            *SyncObj_TaskPoolSpinning = _T("TBB Scheduler"),
-            *SyncObj_Mailbox = _T("TBB Scheduler"),
-            *SyncObj_TaskReturnList = _T("TBB Scheduler"),
-            *SyncObj_TaskStream = _T("TBB Scheduler"),
+            *SyncObj_SchedulerInitialization = __TBB_T("TbbSchedulerInitialization"),
+            *SyncObj_SchedulersList = __TBB_T("TbbSchedulersList"),
+            *SyncObj_WorkerLifeCycleMgmt = __TBB_T("TBB Scheduler"),
+            *SyncObj_TaskStealingLoop = __TBB_T("TBB Scheduler"),
+            *SyncObj_WorkerTaskPool = __TBB_T("TBB Scheduler"),
+            *SyncObj_MasterTaskPool = __TBB_T("TBB Scheduler"),
+            *SyncObj_TaskPoolSpinning = __TBB_T("TBB Scheduler"),
+            *SyncObj_Mailbox = __TBB_T("TBB Scheduler"),
+            *SyncObj_TaskReturnList = __TBB_T("TBB Scheduler"),
+            *SyncObj_TaskStream = __TBB_T("TBB Scheduler"),
 #if __TBB_PREVIEW_CRITICAL_TASKS
-            *SyncObj_CriticalTaskStream = _T("TBB Scheduler"),
+            *SyncObj_CriticalTaskStream = __TBB_T("TBB Scheduler"),
 #endif
-            *SyncObj_ContextsList = _T("TBB Scheduler")
+            *SyncObj_ContextsList = __TBB_T("TBB Scheduler")
             ;
 #endif /* DO_ITT_NOTIFY */
 

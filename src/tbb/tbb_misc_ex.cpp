@@ -338,7 +338,7 @@ static void initialize_hardware_concurrency_info () {
             PrintExtraVersionInfo( "----- Group", "%d: size %d", i, theProcessorGroups[i].numProcs);
 }
 
-int NumberOfProcessorGroups() {
+extern "C" int NumberOfProcessorGroups() {
     __TBB_ASSERT( hardware_concurrency_info == initialization_complete, "NumberOfProcessorGroups is used before AvailableHwConcurrency" );
     return ProcessorGroupInfo::NumGroups;
 }
@@ -346,7 +346,7 @@ int NumberOfProcessorGroups() {
 // Offset for the slot reserved for the first master thread
 #define HoleAdjusted(procIdx, grpIdx) (procIdx + (holeIdx <= grpIdx))
 
-int FindProcessorGroupIndex ( int procIdx ) {
+extern "C" int FindProcessorGroupIndex ( int procIdx ) {
     // In case of oversubscription spread extra workers in a round robin manner
     int holeIdx;
     const int numProcs = theProcessorGroups[ProcessorGroupInfo::NumGroups - 1].numProcsRunningTotal;
@@ -377,7 +377,7 @@ int FindProcessorGroupIndex ( int procIdx ) {
     return i;
 }
 
-void MoveThreadIntoProcessorGroup( void* hThread, int groupIndex ) {
+extern "C" void MoveThreadIntoProcessorGroup( void* hThread, int groupIndex ) {
     __TBB_ASSERT( hardware_concurrency_info == initialization_complete, "MoveThreadIntoProcessorGroup is used before AvailableHwConcurrency" );
     if ( !TBB_SetThreadGroupAffinity )
         return;
@@ -385,7 +385,7 @@ void MoveThreadIntoProcessorGroup( void* hThread, int groupIndex ) {
     TBB_SetThreadGroupAffinity( hThread, &ga, NULL );
 }
 
-int AvailableHwConcurrency() {
+extern "C" int AvailableHwConcurrency() {
     atomic_do_once( &initialize_hardware_concurrency_info, hardware_concurrency_info );
     return theProcessorGroups[ProcessorGroupInfo::NumGroups - 1].numProcsRunningTotal;
 }

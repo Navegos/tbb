@@ -123,6 +123,35 @@
     #include <stdint.h>
 #endif
 
+#if _WIN32||_WIN64
+#undef __TBB_T
+#endif
+
+#ifndef UNICODE
+typedef char unicode_char_t;
+#define WCHAR_SPEC "%s"
+#define UNICODE_CHAR_T 1
+#else
+typedef wchar_t unicode_char_t;
+#define WCHAR_SPEC "%ls"
+#define UNICODE_CHAR_T 2
+#endif
+
+namespace tbb {
+//! Unicode support
+#if (_WIN32||_WIN64) && UNICODE && !__MINGW32__
+    //! Unicode character type. Always wchar_t on Windows.
+    /** We do not use typedefs from Windows TCHAR family to keep consistence of TBB coding style. **/
+    typedef wchar_t tchar;
+    //! Standard Windows macro to markup the string literals.
+    #define __TBB_T(string_literal) L ## string_literal
+#else /* !WIN */
+    typedef char tchar;
+    //! Standard Windows style macro to markup the string literals.
+    #define __TBB_T(string_literal) string_literal
+#endif /* !WIN */
+} // namespace tbb
+
 //! Type for an assertion handler
 typedef void(*assertion_handler_type)( const char* filename, int line, const char* expression, const char * comment );
 

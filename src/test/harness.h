@@ -72,7 +72,7 @@ int TestMain ();
 
 #if _WIN32||_WIN64
     #include "tbb/machine/windows_api.h"
-    #if _WIN32_WINNT > 0x0501 && _MSC_VER && !_M_ARM
+    #if _WIN32_WINNT > 0x0501 && _MSC_VER && !_M_ARM && !_M_ARM64
         // Suppress "typedef ignored ... when no variable is declared" warning by vc14
         #pragma warning (push)
         #pragma warning (disable: 4091)

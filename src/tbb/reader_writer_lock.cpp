@@ -75,7 +75,7 @@ void reader_writer_lock::internal_construct() {
     rdr_count_and_flags = 0;
     my_current_writer = tbb_thread::id();
 #if TBB_USE_THREADING_TOOLS
-    ITT_SYNC_CREATE(this, _T("tbb::reader_writer_lock"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::reader_writer_lock"), __TBB_T(""));
 #endif /* TBB_USE_THREADING_TOOLS */
 }
 

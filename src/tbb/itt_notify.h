@@ -36,7 +36,6 @@
 extern "C" void __itt_fini_ittlib(void);
 
 #if _WIN32||_WIN64
-    #undef _T
 #endif /* WIN */
 
 #endif /* DO_ITT_NOTIFY */
@@ -44,21 +43,6 @@ extern "C" void __itt_fini_ittlib(void);
 #if !ITT_CALLER_NULL
 #define ITT_CALLER_NULL ((__itt_caller)0)
 #endif
-
-namespace tbb {
-//! Unicode support
-#if (_WIN32||_WIN64) && !__MINGW32__
-    //! Unicode character type. Always wchar_t on Windows.
-    /** We do not use typedefs from Windows TCHAR family to keep consistence of TBB coding style. **/
-    typedef wchar_t tchar;
-    //! Standard Windows macro to markup the string literals.
-    #define _T(string_literal) L ## string_literal
-#else /* !WIN */
-    typedef char tchar;
-    //! Standard Windows style macro to markup the string literals.
-    #define _T(string_literal) string_literal
-#endif /* !WIN */
-} // namespace tbb
 
 #if DO_ITT_NOTIFY
 namespace tbb {

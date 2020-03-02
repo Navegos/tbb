@@ -18,6 +18,19 @@
 #define __TBB_function_replacement_H
 
 #include <stddef.h> //for ptrdiff_t
+
+#ifndef UNICODE_CHAR_T
+#ifndef UNICODE
+typedef char unicode_char_t;
+#define WCHAR_SPEC "%s"
+#define UNICODE_CHAR_T 1
+#else
+typedef wchar_t unicode_char_t;
+#define WCHAR_SPEC "%ls"
+#define UNICODE_CHAR_T 2
+#endif
+#endif
+
 typedef enum {
     FRR_OK,     /* Succeeded in replacing the function */
     FRR_NODLL,  /* The requested DLL was not found */
@@ -41,7 +54,7 @@ typedef void (*FUNCPTR)();
 FRR_TYPE ReplaceFunctionA(const char *dllName, const char *funcName, FUNCPTR newFunc, const char ** opcodes, FUNCPTR* origFunc=NULL);
 FRR_TYPE ReplaceFunctionW(const wchar_t *dllName, const char *funcName, FUNCPTR newFunc, const char ** opcodes, FUNCPTR* origFunc=NULL);
 
-bool IsPrologueKnown(const char* dllName, const char *funcName, const char **opcodes, HMODULE module);
+bool IsPrologueKnown(const unicode_char_t* dllName, const char *funcName, const char **opcodes, HMODULE module);
 
 // Utilities to convert between ADDRESS and LPVOID
 union Int2Ptr {

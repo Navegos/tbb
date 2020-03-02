@@ -118,7 +118,7 @@ void mutex::internal_construct() {
     if( error_code )
         tbb::internal::handle_perror(error_code,"mutex: pthread_mutex_init failed");
 #endif /* _WIN32||_WIN64*/
-    ITT_SYNC_CREATE(&impl, _T("tbb::mutex"), _T(""));
+    ITT_SYNC_CREATE(&impl, __TBB_T("tbb::mutex"), __TBB_T(""));
 }
 
 void mutex::internal_destroy() {

@@ -268,7 +268,7 @@ bool x86_rtm_rw_mutex::internal_try_acquire_writer(x86_rtm_rw_mutex::scoped_lock
 }
 
 void x86_rtm_rw_mutex::internal_construct() {
-    ITT_SYNC_CREATE(this, _T("tbb::x86_rtm_rw_mutex"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::x86_rtm_rw_mutex"), __TBB_T(""));
 }
 
 } // namespace internal

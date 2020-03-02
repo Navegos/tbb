@@ -73,14 +73,17 @@ __TBB_SYMBOL( ?internal_attach@task_arena_base@internal@interface7@tbb@@IEAAXXZ 
 __TBB_SYMBOL( ?internal_enqueue@task_arena_base@internal@interface7@tbb@@IEBAXAEAVtask@4@_J@Z )
 __TBB_SYMBOL( ?internal_execute@task_arena_base@internal@interface7@tbb@@IEBAXAEAVdelegate_base@234@@Z )
 __TBB_SYMBOL( ?internal_wait@task_arena_base@internal@interface7@tbb@@IEBAXXZ )
+
 #if __TBB_NUMA_SUPPORT
 __TBB_SYMBOL( ?nodes_count@numa_topology@internal@tbb@@YAIXZ )
 __TBB_SYMBOL( ?fill@numa_topology@internal@tbb@@YAXPEAH@Z )
 __TBB_SYMBOL( ?default_concurrency@numa_topology@internal@tbb@@YAHH@Z )
 #endif /*__TBB_NUMA_SUPPORT*/
+
 #if __TBB_TASK_ISOLATION
 __TBB_SYMBOL( ?isolate_within_arena@internal@interface7@tbb@@YAXAEAVdelegate_base@123@_J@Z )
 #endif /* __TBB_TASK_ISOLATION */
+
 #if !TBB_NO_LEGACY
 // task_v2.cpp
 __TBB_SYMBOL( ?destroy@task@tbb@@QEAAXAEAV12@@Z )
@@ -341,5 +344,10 @@ __TBB_SYMBOL( ?internal_suspend@internal@tbb@@YAXPEAX0@Z )
 __TBB_SYMBOL( ?internal_resume@internal@tbb@@YAXPEAX@Z )
 __TBB_SYMBOL( ?internal_current_suspend_point@internal@tbb@@YAPEAXXZ )
 #endif
+
+__TBB_SYMBOL( AvailableHwConcurrency )
+__TBB_SYMBOL( NumberOfProcessorGroups )
+__TBB_SYMBOL( FindProcessorGroupIndex )
+__TBB_SYMBOL( MoveThreadIntoProcessorGroup )
 
 #undef __TBB_SYMBOL

@@ -16,6 +16,7 @@
 
 #include "dynamic_link.h"
 #include "tbb/tbb_config.h"
+#include "tbb/tbb_stddef.h"
 
 /*
     This file is used by both TBB and OpenMP RTL. Do not use __TBB_ASSERT() macro
@@ -50,7 +51,7 @@
     #pragma weak dlclose
 #endif /* __TBB_WEAK_SYMBOLS_PRESENT && !__TBB_DYNAMIC_LOAD_ENABLED */
 
-#include "tbb_misc.h"
+#include "tbb/tbb_misc.h"
 
 #define __USE_TBB_ATOMICS       ( !(__linux__&&__ia64__) || __TBB_BUILD )
 #define __USE_STATIC_DL_INIT    ( !__ANDROID__ )
@@ -143,7 +144,7 @@ OPEN_INTERNAL_NAMESPACE
         return true;
     }
 
-#if __TBB_WIN8UI_SUPPORT
+#if __TBB_WIN8UI_SUPPORT || (defined(_UNICODE) && defined(WINAPI_FAMILY_DESKTOP_APP))
     bool dynamic_link( const char*  library, const dynamic_link_descriptor descriptors[], size_t required, dynamic_link_handle*, int flags ) {
         dynamic_link_handle tmp_handle = NULL;
         TCHAR wlibrary[256];

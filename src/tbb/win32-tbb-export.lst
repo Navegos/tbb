@@ -347,4 +347,9 @@ __TBB_SYMBOL( ?internal_resume@internal@tbb@@YAXPAX@Z )
 __TBB_SYMBOL( ?internal_current_suspend_point@internal@tbb@@YAPAXXZ )
 #endif
 
+__TBB_SYMBOL( AvailableHwConcurrency )
+__TBB_SYMBOL( NumberOfProcessorGroups )
+__TBB_SYMBOL( FindProcessorGroupIndex )
+__TBB_SYMBOL( MoveThreadIntoProcessorGroup )
+
 #undef __TBB_SYMBOL

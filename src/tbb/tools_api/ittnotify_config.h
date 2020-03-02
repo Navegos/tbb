@@ -162,7 +162,7 @@
 #    define ITT_ARCH ITT_ARCH_IA32E
 #  elif defined _M_IA64 || defined __ia64__
 #    define ITT_ARCH ITT_ARCH_IA64
-#  elif defined _M_ARM || defined __arm__
+#  elif defined _M_ARM || defined _M_ARM64 || defined __arm__
 #    define ITT_ARCH ITT_ARCH_ARM
 #  elif defined __powerpc64__
 #    define ITT_ARCH ITT_ARCH_PPC64

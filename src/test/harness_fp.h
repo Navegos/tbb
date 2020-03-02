@@ -84,7 +84,7 @@ inline void SetSseMode ( int mode ) {
     ctl.set_env();
 }
 
-#elif defined(_M_ARM) || defined(__TBB_WIN32_USE_CL_BUILTINS)
+#elif defined(_M_ARM) || defined(_M_ARM64) || defined(__TBB_WIN32_USE_CL_BUILTINS)
 const int NumSseModes = 1;
 const int SseModes[NumSseModes] = { 0 };
 

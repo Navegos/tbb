@@ -40,6 +40,12 @@
 #pragma warning (disable: 4244)
 #endif
 
+#if defined(WINAPI_FAMILY) && WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
+#define RML_USE_WCRM 1
+#else
+#define RML_USE_WCRM 0
+#endif
+
 #include "job_automaton.h"
 #include "wait_counter.h"
 #include "thread_monitor.h"
@@ -75,6 +81,12 @@ static const size_t cache_line_size = tbb::internal::NFS_MaxLineSize;
 template<typename Server, typename Client> class generic_connection;
 class tbb_connection_v2;
 class omp_connection_v2;
+
+extern "C" void RmlInitializeITT() {
+#if DO_ITT_NOTIFY
+	tbb::internal::__TBB_load_ittnotify();
+#endif
+}
 
 #if RML_USE_WCRM
 //! State of a server_thread

@@ -293,4 +293,9 @@ __TBB_SYMBOL( ?internal_condition_variable_notify_one@internal@interface5@tbb@@Y
 __TBB_SYMBOL( ?internal_condition_variable_notify_all@internal@interface5@tbb@@YAXAATcondvar_impl_t@123@@Z )
 __TBB_SYMBOL( ?internal_destroy_condition_variable@internal@interface5@tbb@@YAXAATcondvar_impl_t@123@@Z )
 
+__TBB_SYMBOL( AvailableHwConcurrency )
+__TBB_SYMBOL( NumberOfProcessorGroups )
+__TBB_SYMBOL( FindProcessorGroupIndex )
+__TBB_SYMBOL( MoveThreadIntoProcessorGroup )
+
 #undef __TBB_SYMBOL

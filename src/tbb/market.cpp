@@ -699,7 +699,7 @@ void market::acknowledge_close_connection() {
 ::rml::job* market::create_one_job() {
     unsigned index = ++my_first_unused_worker_idx;
     __TBB_ASSERT( index > 0, NULL );
-    ITT_THREAD_SET_NAME(_T("TBB Worker Thread"));
+    ITT_THREAD_SET_NAME(__TBB_T("TBB Worker Thread"));
     // index serves as a hint decreasing conflicts between workers when they migrate between arenas
     generic_scheduler* s = generic_scheduler::create_worker( *this, index, /* genuine = */ true );
 #if __TBB_TASK_GROUP_CONTEXT

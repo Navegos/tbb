@@ -42,7 +42,7 @@
 // The information about a standard memory allocation function for the replacement log
 struct FunctionInfo {
     const char* funcName;
-    const char* dllName;
+    const unicode_char_t* dllName;
 };
 
 // Namespace that processes and manages the output of records to the Log journal
@@ -556,7 +556,7 @@ FRR_TYPE ReplaceFunctionW(const wchar_t *dllName, const char *funcName, FUNCPTR 
     return FRR_OK;
 }
 
-bool IsPrologueKnown(const char* dllName, const char *funcName, const char **opcodes, HMODULE module)
+bool IsPrologueKnown(const unicode_char_t* dllName, const char *funcName, const char **opcodes, HMODULE module)
 {
     FARPROC inpFunc = GetProcAddress(module, funcName);
     FunctionInfo functionInfo = { funcName, dllName };

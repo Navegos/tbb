@@ -482,7 +482,7 @@ waiting:
 }
 
 void queuing_rw_mutex::internal_construct() {
-    ITT_SYNC_CREATE(this, _T("tbb::queuing_rw_mutex"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::queuing_rw_mutex"), __TBB_T(""));
 }
 
 } // namespace tbb

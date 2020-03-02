@@ -98,7 +98,7 @@ done:
 }
 
 void queuing_mutex::internal_construct() {
-    ITT_SYNC_CREATE(this, _T("tbb::queuing_mutex"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::queuing_mutex"), __TBB_T(""));
 }
 
 } // namespace tbb

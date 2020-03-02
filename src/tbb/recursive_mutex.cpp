@@ -106,7 +106,7 @@ void recursive_mutex::internal_construct() {
         tbb::internal::handle_perror(error_code,"recursive_mutex: pthread_mutex_init failed");
     pthread_mutexattr_destroy( &mtx_attr );
 #endif /* _WIN32||_WIN64*/
-    ITT_SYNC_CREATE(&impl, _T("tbb::recursive_mutex"), _T(""));
+    ITT_SYNC_CREATE(&impl, __TBB_T("tbb::recursive_mutex"), __TBB_T(""));
 }
 
 void recursive_mutex::internal_destroy() {

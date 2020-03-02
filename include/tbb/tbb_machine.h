@@ -206,7 +206,7 @@ template<> struct atomic_selector<8> {
         #include "machine/windows_ia32.h"
     #elif defined(_M_X64)
         #include "machine/windows_intel64.h"
-    #elif defined(_M_ARM) || defined(__TBB_WIN32_USE_CL_BUILTINS)
+    #elif defined(_M_ARM) || defined(_M_ARM64) || defined(__TBB_WIN32_USE_CL_BUILTINS)
         #include "machine/msvc_armv7.h"
     #endif
 
@@ -861,7 +861,7 @@ inline intptr_t __TBB_Log2( uintptr_t x ) {
     if( x==0 ) return -1;
     intptr_t result = 0;
 
-#if !defined(_M_ARM)
+#if !defined(_M_ARM) && !defined(_M_ARM64)
     uintptr_t tmp_;
     if( sizeof(x)>4 && (tmp_ = ((uint64_t)x)>>32) ) { x=tmp_; result += 32; }
 #endif

@@ -150,6 +150,6 @@ bool spin_rw_mutex_v3::internal_try_acquire_reader()
 }
 
 void spin_rw_mutex_v3::internal_construct() {
-    ITT_SYNC_CREATE(this, _T("tbb::spin_rw_mutex"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::spin_rw_mutex"), __TBB_T(""));
 }
 } // namespace tbb

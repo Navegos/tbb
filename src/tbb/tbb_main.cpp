@@ -163,11 +163,11 @@ static __itt_string_handle *ITT_get_string_handle(int idx) {
 }
 
 static void ITT_init_domains() {
-    tbb_domains[ITT_DOMAIN_MAIN] = __itt_domain_create( _T("tbb") );
+    tbb_domains[ITT_DOMAIN_MAIN] = __itt_domain_create( __TBB_T("tbb") );
     tbb_domains[ITT_DOMAIN_MAIN]->flags = 1;
-    tbb_domains[ITT_DOMAIN_FLOW] = __itt_domain_create( _T("tbb.flow") );
+    tbb_domains[ITT_DOMAIN_FLOW] = __itt_domain_create( __TBB_T("tbb.flow") );
     tbb_domains[ITT_DOMAIN_FLOW]->flags = 1;
-    tbb_domains[ITT_DOMAIN_ALGO] = __itt_domain_create( _T("tbb.algorithm") );
+    tbb_domains[ITT_DOMAIN_ALGO] = __itt_domain_create( __TBB_T("tbb.algorithm") );
     tbb_domains[ITT_DOMAIN_ALGO]->flags = 1;
 }
 

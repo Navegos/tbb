@@ -62,8 +62,8 @@ namespace rml {
 namespace internal {
 
 #if DO_ITT_NOTIFY
-static const ::tbb::tchar *SyncType_RML = _T("%Constant");
-static const ::tbb::tchar *SyncObj_ThreadMonitor = _T("RML Thr Monitor");
+static const ::tbb::tchar *SyncType_RML = __TBB_T("%Constant");
+static const ::tbb::tchar *SyncObj_ThreadMonitor = __TBB_T("RML Thr Monitor");
 #endif /* DO_ITT_NOTIFY */
 
 //! Monitor with limited two-phase commit form of wait.

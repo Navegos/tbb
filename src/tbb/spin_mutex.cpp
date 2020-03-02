@@ -48,7 +48,7 @@ bool spin_mutex::scoped_lock::internal_try_acquire( spin_mutex& m ) {
 }
 
 void spin_mutex::internal_construct() {
-    ITT_SYNC_CREATE(this, _T("tbb::spin_mutex"), _T(""));
+    ITT_SYNC_CREATE(this, __TBB_T("tbb::spin_mutex"), __TBB_T(""));
 }
 
 } // namespace tbb

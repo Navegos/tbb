@@ -18,5 +18,10 @@
 EXPORTS
 
 #define __TBB_SYMBOL( sym ) sym
+#if _M_ARM64
+#include "winrt64-tbb-export.lst"
+#else
 #include "win64-tbb-export.lst"
+#endif
+
 

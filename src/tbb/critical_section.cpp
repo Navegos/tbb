@@ -21,7 +21,7 @@ namespace tbb {
     namespace internal {
 
 void critical_section_v4::internal_construct() {
-    ITT_SYNC_CREATE(&my_impl, _T("ppl::critical_section"), _T(""));
+    ITT_SYNC_CREATE(&my_impl, __TBB_T("ppl::critical_section"), __TBB_T(""));
 }
 }  // namespace internal
 }  // namespace tbb

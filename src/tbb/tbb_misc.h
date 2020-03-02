@@ -57,7 +57,7 @@ const size_t ThreadStackSize = (sizeof(uintptr_t) <= 4 ? 2 : 4 )*MByte;
 #ifndef __TBB_HardwareConcurrency
 
 //! Returns maximal parallelism level supported by the current OS configuration.
-int AvailableHwConcurrency();
+extern "C" int AvailableHwConcurrency();
 
 #else
 
@@ -68,19 +68,19 @@ inline int AvailableHwConcurrency() {
 #endif /* __TBB_HardwareConcurrency */
 
 //! Returns OS regular memory page size
-size_t DefaultSystemPageSize();
+extern "C" size_t DefaultSystemPageSize();
 
 #if _WIN32||_WIN64
 
 //! Returns number of processor groups in the current OS configuration.
 /** AvailableHwConcurrency must be called at least once before calling this method. **/
-int NumberOfProcessorGroups();
+extern "C" int NumberOfProcessorGroups();
 
 //! Retrieves index of processor group containing processor with the given index
-int FindProcessorGroupIndex ( int processorIndex );
+extern "C" int FindProcessorGroupIndex ( int processorIndex );
 
 //! Affinitizes the thread to the specified processor group
-void MoveThreadIntoProcessorGroup( void* hThread, int groupIndex );
+extern "C" void MoveThreadIntoProcessorGroup( void* hThread, int groupIndex );
 
 #endif /* _WIN32||_WIN64 */
 
