@@ -210,9 +210,9 @@
       <EnableCOMDATFolding />
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWP32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWP32\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWP32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWP32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWP32\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\UWP32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -245,9 +245,9 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWP32\vc16</Comma
       <EnableCOMDATFolding />
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM32\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWPARM32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWPARM32\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\UWPARM32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -280,9 +280,9 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM32\vc16</Co
       <EnableCOMDATFolding />
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM64\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWPARM64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWPARM64\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\UWPARM64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -318,9 +318,9 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM64\vc16</Co
       <EnableCOMDATFolding />
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWP64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWP64\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWP64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWP64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWP64\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\UWP64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -355,8 +355,8 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\UWP64\vc16</Comma
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWP32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWP32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWP32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWP32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -391,8 +391,8 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWP32\vc16</Comma
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWPARM32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWPARM32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -427,8 +427,8 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM32\vc16</Co
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWPARM64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWPARM64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWPARM64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -466,8 +466,8 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWPARM64\vc16</Co
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\UWP64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\UWP64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\UWP64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\UWP64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

@@ -22,9 +22,9 @@
 #if DO_ITT_NOTIFY
 
 #if _WIN32||_WIN64
-    #ifndef UNICODE
-        #define UNICODE
-    #endif
+#   if defined(_UNICODE) && !defined(UNICODE)
+#       define UNICODE
+#   endif
 #endif /* WIN */
 
 #ifndef INTEL_ITTNOTIFY_API_PRIVATE

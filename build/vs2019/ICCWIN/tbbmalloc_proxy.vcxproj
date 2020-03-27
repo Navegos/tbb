@@ -123,9 +123,9 @@
       <AdditionalDependencies>tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win32\icc19
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\icc19
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win32\icc19</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win32\icc19
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win32\icc19
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\Win32\icc19</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -158,9 +158,9 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win32\icc19</Comm
       <AdditionalDependencies>tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win64\icc19
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win64\icc19
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win64\icc19</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win64\icc19
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win64\icc19
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\Win64\icc19</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -194,8 +194,8 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win64\icc19</Comm
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win32\icc19
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\icc19</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win32\icc19
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win32\icc19</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -232,8 +232,8 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\icc19</Comm
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win64\icc19
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win64\icc19</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win64\icc19
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win64\icc19</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

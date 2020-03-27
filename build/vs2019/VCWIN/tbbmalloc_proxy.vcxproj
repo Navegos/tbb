@@ -123,9 +123,9 @@
       <AdditionalDependencies>tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win32\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\Win32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -158,9 +158,9 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win32\vc16</Comma
       <AdditionalDependencies>tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win64\vc16
-copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win64\vc16
+copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\oneTBB\bin\Win64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -179,7 +179,6 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win64\vc16</Comma
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -192,10 +191,11 @@ copy $(OutDir)$(TargetName).pdb $(LIBRARIES_PATH)\IntelTBB\bin\Win64\vc16</Comma
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <AdditionalLibraryDirectories>$(ProjectDir)output\tbb\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win32\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win32\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win32\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -217,7 +217,6 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\vc16</Comma
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -230,10 +229,11 @@ copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win32\vc16</Comma
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <AdditionalLibraryDirectories>$(ProjectDir)output\tbb\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>tbb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\IntelTBB\bin\Win64\vc16
-copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\IntelTBB\lib\Win64\vc16</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(LIBRARIES_PATH)\oneTBB\bin\Win64\vc16
+copy $(OutDir)$(TargetName).lib $(LIBRARIES_PATH)\oneTBB\lib\Win64\vc16</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>.;../../../include;../../../src;../../../src/rml/include;../../../src/tbbmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
