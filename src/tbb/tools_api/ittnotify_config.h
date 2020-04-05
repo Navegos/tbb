@@ -75,7 +75,7 @@
 #endif /* ITT_PLATFORM */
 
 #if defined(_UNICODE) && !defined(UNICODE)
-#   define UNICODE
+#define UNICODE
 #endif
 
 #include <stddef.h>
