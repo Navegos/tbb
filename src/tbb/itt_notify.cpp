@@ -14,7 +14,7 @@
     limitations under the License.
 */
 
-#if DO_ITT_NOTIFY
+#if __TBB_USE_ITT_NOTIFY
 
 #if _WIN32||_WIN64
 #if     defined(_UNICODE) && !defined(UNICODE)
@@ -39,10 +39,6 @@ extern "C" void MallocInitializeITT();
 
 extern "C" void ITT_DoOneTimeInitialization();
 
-#elif __IRML_BUILD
-
-extern "C" void RmlInitializeITT();
-#define __itt_init_ittlib_name(x,y) (RmlInitializeITT(), true)
 #else
 #error This file is expected to be used for either TBB or TBB allocator build.
 #endif // __TBB_BUILD
@@ -50,7 +46,10 @@ extern "C" void RmlInitializeITT();
 #include "tools_api/ittnotify_static.c"
 
 namespace tbb {
-namespace internal {
+namespace detail {
+namespace r1 {
+
+/** This extra proxy method is necessary since __itt_init_lib is declared as static **/
 int __TBB_load_ittnotify() {
 #if !(_WIN32||_WIN64)
     // tool_api crashes without dlopen, check that it's present. Common case
@@ -66,37 +65,8 @@ int __TBB_load_ittnotify() {
                            ));
 }
 
-}} // namespaces
-
-#endif /* DO_ITT_NOTIFY */
-
-#define __TBB_NO_IMPLICIT_LINKAGE 1
-#include "itt_notify.h"
-
-namespace tbb {
-
-#if DO_ITT_NOTIFY
-    const tchar
-            *SyncType_GlobalLock = __TBB_T("TbbGlobalLock"),
-            *SyncType_Scheduler = __TBB_T("%Constant")
-            ;
-    const tchar
-            *SyncObj_SchedulerInitialization = __TBB_T("TbbSchedulerInitialization"),
-            *SyncObj_SchedulersList = __TBB_T("TbbSchedulersList"),
-            *SyncObj_WorkerLifeCycleMgmt = __TBB_T("TBB Scheduler"),
-            *SyncObj_TaskStealingLoop = __TBB_T("TBB Scheduler"),
-            *SyncObj_WorkerTaskPool = __TBB_T("TBB Scheduler"),
-            *SyncObj_MasterTaskPool = __TBB_T("TBB Scheduler"),
-            *SyncObj_TaskPoolSpinning = __TBB_T("TBB Scheduler"),
-            *SyncObj_Mailbox = __TBB_T("TBB Scheduler"),
-            *SyncObj_TaskReturnList = __TBB_T("TBB Scheduler"),
-            *SyncObj_TaskStream = __TBB_T("TBB Scheduler"),
-#if __TBB_PREVIEW_CRITICAL_TASKS
-            *SyncObj_CriticalTaskStream = __TBB_T("TBB Scheduler"),
-#endif
-            *SyncObj_ContextsList = __TBB_T("TBB Scheduler")
-            ;
-#endif /* DO_ITT_NOTIFY */
-
+} //namespace r1
+} //namespace detail
 } // namespace tbb
 
+#endif /* __TBB_USE_ITT_NOTIFY */
