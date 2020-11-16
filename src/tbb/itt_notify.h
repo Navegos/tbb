@@ -62,13 +62,13 @@ namespace r1 {
     #define _T(string_literal) string_literal
 #endif /* !WIN */
 
-    //! Display names of internal synchronization types
-    extern const tchar
-            *SyncType_Scheduler;
-    //! Display names of internal synchronization components/scenarios
-    extern const tchar
-            *SyncObj_ContextsList
-            ;
+//! Display names of internal synchronization types
+extern const tchar
+    *SyncType_Scheduler;
+//! Display names of internal synchronization components/scenarios
+extern const tchar
+    *SyncObj_ContextsList
+    ;
 
 #if __TBB_USE_ITT_NOTIFY
 // const_cast<void*>() is necessary to cast off volatility
